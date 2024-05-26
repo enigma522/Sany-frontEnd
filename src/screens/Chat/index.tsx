@@ -4,8 +4,9 @@ import {Appbar, Text} from 'react-native-paper';
 import {useNavigate, useParams} from 'react-router-native';
 
 const ChatScreen = () => {
-  const {chatId} = useParams();
-  const navigate = useNavigate();
+    
+    const navigate = useNavigate();
+    const {chatId} = useParams();
 
   return (
     <View style={styles.container}>
