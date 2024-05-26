@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
 import {Avatar, Text} from 'react-native-paper';
 import {useNavigate} from 'react-router-native';
@@ -31,7 +32,7 @@ const ChatsScreen = () => {
               size={72}
               style={styles.profilePicture}
               source={{
-                uri: `https://randomuser.me/api/portraits/men${friend.id}.jpg`,
+                uri: `https://randomuser.me/api/portraits/men/${friend.id}.jpg`,
               }}
             />
             <View>
