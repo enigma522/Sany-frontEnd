@@ -5,8 +5,9 @@ import { useNavigate, useParams } from "react-router-native";
 
 
 const ChatScreen = () => {
-    const {chatId} = useParams();
+    
     const navigate = useNavigate();
+    const {chatId} = useParams();
 
 
   return (

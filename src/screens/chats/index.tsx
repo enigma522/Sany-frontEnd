@@ -31,7 +31,7 @@ const ChatsScreen = () => {
               size={72}
               style={styles.profilePicture}
               source={{
-                uri: `https://randomuser.me/api/portraits/men${friend.id}.jpg`,
+                uri: `https://randomuser.me/api/portraits/men/${friend.id}.jpg`,
               }}
             />
             <View>
