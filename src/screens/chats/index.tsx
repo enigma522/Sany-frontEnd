@@ -1,9 +1,13 @@
-import * as React from 'react';
 import {Pressable, StyleSheet, View} from 'react-native';
-import {Avatar, Text} from 'react-native-paper';
+import {Avatar, Button, Text} from 'react-native-paper';
 import {useNavigate} from 'react-router-native';
 
+import {AuthContext} from '../../shared/auth/contexts/auth.context';
+import React, {useContext} from 'react';
+
 const ChatsScreen = () => {
+  const {onLogout} = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const friends = [
@@ -42,6 +46,7 @@ const ChatsScreen = () => {
           </View>
         </Pressable>
       ))}
+      <Button onPress={onLogout}>Sign Out</Button>
     </View>
   );
 };
