@@ -1,4 +1,13 @@
-import * as React from 'react';
+import Friends from '../../shared/friends/components/Friends';
+
+const ChatsScreen = () => {
+  return <Friends showMessage />;
+};
+
+export default ChatsScreen;
+
+/**
+ * import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Appbar, Text} from 'react-native-paper';
 import {useNavigate, useParams} from 'react-router-native';
@@ -33,3 +42,5 @@ const styles = StyleSheet.create({
 });
 
 export default ChatScreen;
+
+ */
