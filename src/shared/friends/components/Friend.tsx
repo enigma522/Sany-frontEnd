@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-native';
 import {Avatar} from 'react-native-paper';
 
 import {ActiveFriend} from '../models';
-import {COLOR_ONLINE_GREEN} from '../../constants/color';
+import {COLOR_ONLINE_GREEN} from '../../constants/colors';
 
 import {FriendsContext} from '../contexts/friends.context';
 

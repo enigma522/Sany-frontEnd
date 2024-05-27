@@ -9,7 +9,7 @@ import {
   COLOR_FB_PRIMARY,
   COLOR_FB_SECONDARY,
   COLOR_WHITE,
-} from '../../shared/constants/color';
+} from '../../shared/constants/colors';
 import Input from '../../shared/components/Input';
 import Loader from '../../shared/components/Loader';
 
