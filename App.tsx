@@ -10,11 +10,11 @@ function App(): JSX.Element {
   return (
     <QueryClientProvider client={new QueryClient()}>
       <AuthProvider>
-        <SafeAreaProvider>
+        <FriendsProvider>
           <PaperProvider>
             <Screens />
           </PaperProvider>
-        </SafeAreaProvider>
+        </FriendsProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

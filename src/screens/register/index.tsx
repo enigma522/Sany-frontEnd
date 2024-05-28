@@ -6,7 +6,7 @@ import {
   COLOR_FB_PRIMARY,
   COLOR_FB_SECONDARY,
   COLOR_WHITE,
-} from '../../shared/constants/color';
+} from '../../shared/constants/colors';
 import {useNavigate} from 'react-router-native';
 import {useState} from 'react';
 import {Button} from 'react-native-paper';

@@ -8,7 +8,7 @@ import {AuthContext} from '../shared/auth/contexts/auth.context';
 import {NavRoutes} from '../shared/constants/navRoutes';
 import RegisterScreen from './register';
 import LoginScreen from './login';
-import ChatScreen from './Chat';
+import ChatScreen from './chat';
 import ChatsScreen from './chats';
 
 const Screens = () => {
