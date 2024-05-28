@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import React,{useContext, useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 import {Appbar, Avatar, IconButton} from 'react-native-paper';
@@ -81,7 +81,7 @@ const ChatScreen = () => {
             size={24}
             onPress={async () => {
               setCallActivity(CallActivity.Requesting);
-              const meetingId = await createMeeting().catch(e =>
+              const meetingId = await createMeeting().catch((e:Error )=>
                 console.log(e),
               );
               if (!meetingId) return;

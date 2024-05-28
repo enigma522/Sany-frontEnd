@@ -1,4 +1,4 @@
-import {
+import React,{
   createContext,
   useState,
   ReactNode,
@@ -12,10 +12,9 @@ import {useQuery} from 'react-query';
 import {useParams} from 'react-router-native';
 import SocketIOClient from 'socket.io-client';
 import PushNotification from 'react-native-push-notification';
-import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import BackgroundTimer from 'react-native-background-timer';
 
-import {IP_ADDRESS} from '@env';
+
 
 import getFriends from '../helpers/friends';
 import {getFriendRequests} from '../../../screens/people/requests';
@@ -77,7 +76,7 @@ export const FriendsProvider = ({children}: {children: ReactNode}) => {
     CallActivity.None,
   );
 
-  const chatBaseUrl = `http://${IP_ADDRESS ?? '10.0.2.2'}:7000`;
+  const chatBaseUrl = `http://10.0.2.2:7000`;
 
   const chatSocket = useMemo(
     () =>
@@ -126,12 +125,6 @@ export const FriendsProvider = ({children}: {children: ReactNode}) => {
           title: 'NEW Message - ANDROID',
           message: message.message,
           channelId: '1',
-        });
-      } else if (Platform.OS === 'ios') {
-        PushNotificationIOS.addNotificationRequest({
-          id: '1',
-          title: 'NEW Message - IOS',
-          body: message.message,
         });
       }
     });
@@ -198,7 +191,7 @@ export const FriendsProvider = ({children}: {children: ReactNode}) => {
     },
   );
 
-  const presenceBaseUrl = `http://${IP_ADDRESS ?? '10.0.2.2'}:6000`;
+  const presenceBaseUrl = `http://10.0.2.2:6000`;
 
   const presenceSocket = useMemo(
     () =>

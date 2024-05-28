@@ -1,69 +1,23 @@
-import {Pressable, StyleSheet, View} from 'react-native';
-import {Avatar, Button, Text} from 'react-native-paper';
+import {useContext, useEffect} from 'react';
+
 import {useNavigate} from 'react-router-native';
 
-import {AuthContext} from '../../shared/auth/contexts/auth.context';
-import React, {useContext} from 'react';
+import Friends from '../../shared/friends/components/Friends';
+import {FriendsContext} from '../../shared/friends/contexts/friends.context';
+import {CallActivity} from '../../shared/friends/models';
+import React from 'react';
 
 const ChatsScreen = () => {
-  const {onLogout} = useContext(AuthContext);
-
+  const {callActivity} = useContext(FriendsContext);
   const navigate = useNavigate();
 
-  const friends = [
-    {
-      id: 1,
-      name: 'John Doe',
-    },
-    {
-      id: 2,
-      name: 'Med Doe',
-    },
-    {
-      id: 3,
-      name: 'John Doe',
-    },
-  ];
+  useEffect(() => {
+    if (callActivity === CallActivity.Receiving) {
+      navigate('/receive-call');
+    }
+  }, [callActivity, navigate]);
 
-  return (
-    <View style={styles.container}>
-      {friends.map(friend => (
-        <Pressable
-          key={friend.id}
-          onPress={() => navigate(`/chat/${friend.id}`)}>
-          <View style={styles.friend}>
-            <Avatar.Image
-              size={72}
-              style={styles.profilePicture}
-              source={{
-                uri: `https://randomuser.me/api/portraits/men/${friend.id}.jpg`,
-              }}
-            />
-            <View>
-              <Text>{friend.name}</Text>
-              <Text>Hey there! I am using WhatsApp</Text>
-            </View>
-          </View>
-        </Pressable>
-      ))}
-      <Button onPress={onLogout}>Sign Out</Button>
-    </View>
-  );
+  return <Friends showMessage />;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 26,
-  },
-  friend: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 8,
-  },
-  profilePicture: {
-    marginRight: 8,
-  },
-});
 
 export default ChatsScreen;

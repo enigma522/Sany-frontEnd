@@ -20,3 +20,5 @@ const getFriends = (friendRequests: FriendRequest[], userId: number) => {
 
   return friends;
 };
+
+export default getFriends;

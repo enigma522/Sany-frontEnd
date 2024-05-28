@@ -5,6 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {AuthProvider} from './src/shared/auth/contexts/auth.context';
 import Screens from './src/screens';
+import { FriendsProvider } from './src/shared/friends/contexts/friends.context';
 
 function App(): JSX.Element {
   return (
